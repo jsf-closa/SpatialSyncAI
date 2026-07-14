@@ -1,0 +1,74 @@
+name: Planned implementation task
+description: Create or track one issue from the SpatialSync AI roadmap.
+title: "[Issue #00] "
+labels:
+  - "type:feature"
+body:
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase
+      description: Select the planned pull-request phase.
+      options:
+        - "PR 1: Application Foundation and Landing Page"
+        - "PR 2: Dashboard and Project Navigation"
+        - "PR 3: Project Creation Workflow"
+        - "PR 4: Domain Models and Workspace State"
+        - "PR 5: Editable Room Schedule"
+        - "PR 6: Editable Adjacency Matrix"
+        - "PR 7: Code-Generated Bubble Diagram"
+        - "PR 8: AI Brief Analyzer"
+        - "PR 9: AI Adjacency Suggestions"
+        - "PR 10: Functional Zoning and AI Layout Review"
+        - "PR 11: Markdown and Mermaid Export"
+        - "PR 12: Local Persistence and Project Lifecycle"
+        - "PR 13: MVP Quality, Documentation, and Deployment"
+        - "PR 14: Supabase Persistence"
+        - "PR 15: Advanced Diagram Assistance"
+    validations:
+      required: true
+
+  - type: input
+    id: roadmap_issue
+    attributes:
+      label: Roadmap issue number
+      description: Enter the number used in docs/ISSUES.md, such as 13.
+      placeholder: "13"
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: Copy or summarize the goal from the phase document.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Tasks
+      description: Use a checklist for the planned work.
+      value: |
+        - [ ] Task one
+        - [ ] Task two
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Define verifiable completion conditions.
+      value: |
+        - [ ] Criterion one
+        - [ ] Criterion two
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes and dependencies
+      description: Add blockers, linked issues, design decisions, or limitations.

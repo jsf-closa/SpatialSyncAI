@@ -1,0 +1,36 @@
+name: Validate planning docs
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify required planning files
+        shell: bash
+        run: |
+          test -f README.md
+          test -f docs/ISSUES.md
+          test -f docs/phases/README.md
+          test -f docs/governance/mvp-acceptance-test.md
+          count=$(find docs/phases -maxdepth 1 -type f -name '[0-9][0-9]-*.md' | wc -l)
+          test "$count" -eq 15
+
+      - name: Check for conflict markers
+        shell: bash
+        run: |
+          if grep -RInE '^(<<<<<<<|=======|>>>>>>>)' -- .             --exclude-dir=.git; then
+            echo "Conflict marker found."
+            exit 1
+          fi

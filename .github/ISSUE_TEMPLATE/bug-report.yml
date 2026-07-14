@@ -1,0 +1,50 @@
+name: Bug report
+description: Report a defect discovered during implementation.
+title: "[Bug] "
+labels:
+  - "type:bug"
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1. Go to ...
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: input
+    id: phase
+    attributes:
+      label: Related phase or issue
+      placeholder: "PR 6 / Issue #29"
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, operating system, branch, and commit if relevant.
