@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { ProjectCard } from "@/components/project-card";
 
 const placeholderProjects = [
   {
@@ -7,6 +8,7 @@ const placeholderProjects = [
     name: "Community Health Center",
     buildingType: "Healthcare",
     updatedAt: "Demo project",
+    isDemo: true,
   },
   {
     id: "mixed-use-study",
@@ -49,29 +51,14 @@ export default function DashboardPage() {
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {projects.map((project) => (
-              <article
+              <ProjectCard
                 key={project.id}
-                className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
-              >
-                <p className="text-sm font-semibold text-blue-600">
-                  {project.buildingType}
-                </p>
-
-                <h2 className="mt-3 text-xl font-semibold text-slate-950">
-                  {project.name}
-                </h2>
-
-                <p className="mt-3 text-sm text-slate-500">
-                  {project.updatedAt}
-                </p>
-
-                <Link
-                  href={`/projects/${project.id}`}
-                  className="mt-6 inline-flex text-sm font-semibold text-blue-700 hover:text-blue-800"
-                >
-                  Open workspace →
-                </Link>
-              </article>
+                id={project.id}
+                name={project.name}
+                buildingType={project.buildingType}
+                updatedAt={project.updatedAt}
+                isDemo={project.isDemo}
+              />
             ))}
           </div>
         </section>
