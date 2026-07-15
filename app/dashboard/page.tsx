@@ -5,7 +5,7 @@ import { ProjectCard } from "@/components/project-card";
 
 const placeholderProjects = [
   {
-    id: "demo-health-center",
+    id: "demo",
     name: "Community Health Center",
     buildingType: "Healthcare",
     updatedAt: "Demo project",
