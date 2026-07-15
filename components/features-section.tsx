@@ -1,4 +1,5 @@
 import { Container } from "@/components/container";
+import { SectionHeading } from "@/components/section-heading";
 
 const features = [
   {
@@ -46,21 +47,11 @@ export function FeaturesSection() {
       className="scroll-mt-20 border-y border-slate-200 bg-white py-20 sm:py-24"
     >
       <Container>
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            Core capabilities
-          </p>
-
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-            Keep early design information connected and understandable.
-          </h2>
-
-          <p className="mt-5 text-lg leading-8 text-slate-600">
-            Instead of managing disconnected notes and spreadsheets, SpatialSync
-            AI brings room data, adjacency logic, zoning, diagrams, and export
-            preparation into one workflow.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Core capabilities"
+          title="Keep early design information connected and understandable."
+          description="Instead of managing disconnected notes and spreadsheets, SpatialSync AI brings room data, adjacency logic, zoning, diagrams, and export preparation into one workflow."
+        />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {features.map((feature) => (

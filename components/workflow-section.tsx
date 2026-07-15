@@ -1,4 +1,5 @@
 import { Container } from "@/components/container";
+import { SectionHeading } from "@/components/section-heading";
 
 const workflowSteps = [
   {
@@ -37,21 +38,11 @@ export function WorkflowSection() {
   return (
     <section id="workflow" className="scroll-mt-20 bg-slate-50 py-20 sm:py-24">
       <Container>
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            Guided workflow
-          </p>
-
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-            Move from project brief to preliminary spatial planning.
-          </h2>
-
-          <p className="mt-5 text-lg leading-8 text-slate-600">
-            SpatialSync AI keeps early architectural decisions organized so the
-            team can understand how spaces, users, and functional relationships
-            connect.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Guided workflow"
+          title="Move from project brief to preliminary spatial planning."
+          description="SpatialSync AI keeps early architectural decisions organized so the team can understand how spaces, users, and functional relationships connect."
+        />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
           {workflowSteps.map((step) => (
