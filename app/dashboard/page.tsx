@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { DashboardEmptyState } from "@/components/dashboard-empty-state";
 import { ProjectCard } from "@/components/project-card";
 
 const placeholderProjects = [
@@ -49,18 +50,22 @@ export default function DashboardPage() {
             </Link>
           </div>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                id={project.id}
-                name={project.name}
-                buildingType={project.buildingType}
-                updatedAt={project.updatedAt}
-                isDemo={project.isDemo}
-              />
-            ))}
-          </div>
+          {projects.length > 0 ? (
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              {projects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  id={project.id}
+                  name={project.name}
+                  buildingType={project.buildingType}
+                  updatedAt={project.updatedAt}
+                  isDemo={project.isDemo}
+                />
+              ))}
+            </div>
+          ) : (
+            <DashboardEmptyState />
+          )}
         </section>
       </Container>
     </main>
