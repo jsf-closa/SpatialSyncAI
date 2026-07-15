@@ -28,12 +28,12 @@ export function HeroSection() {
               Start a project
             </Link>
 
-            <Link
+            <a
               href="#workflow"
               className="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
             >
               See how it works
-            </Link>
+            </a>
           </div>
 
           <p className="mt-5 text-sm text-slate-500">
