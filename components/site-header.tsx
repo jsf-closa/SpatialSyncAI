@@ -15,14 +15,14 @@ export function SiteHeader() {
         <nav aria-label="Primary navigation">
           <div className="flex items-center gap-3 sm:gap-6">
             <Link
-              href="#workflow"
+              href="/#workflow"
               className="hidden text-sm font-medium text-slate-600 transition hover:text-slate-950 sm:inline"
             >
               Workflow
             </Link>
 
             <Link
-              href="#features"
+              href="/#features"
               className="hidden text-sm font-medium text-slate-600 transition hover:text-slate-950 sm:inline"
             >
               Features
